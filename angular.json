@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular10"
+    }
+  },
+  "defaultProject": "angular10",
+  "cli": {
+    "analytics": "5c0f5bdd-e507-40cd-8f9a-cea2b3949d0a"
+  }
 }

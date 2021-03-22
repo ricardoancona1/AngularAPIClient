@@ -13,7 +13,7 @@ readonly PhotoUrl = "http://localhost:44320/Photos/";
   constructor(private http:HttpClient) { }
 
   getDepList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/Department');
+    return this.http.get<any>(this.APIUrl+'/Tabulador');
   }
 
   addDepartment(val:any){
@@ -50,8 +50,13 @@ readonly PhotoUrl = "http://localhost:44320/Photos/";
     return this.http.post(this.APIUrl+'/Employee/SaveFile',val);
   }
 
-  getAllDepartmentNames():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/Employee/GetAllDepartmentNames');
+  getTabuladores():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/Tabulador');
   }
-
+  getDepartamentos(val:any):Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/Employee/'+val);
+  }
+  postTabulador(val:any){
+    return this.http.post(this.APIUrl+'/Tabulador/',val);
+  }
 }

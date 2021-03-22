@@ -13,16 +13,17 @@ export class AddEditDepComponent implements OnInit {
   @Input() dep:any;
   DepartmentId:string;
   DepartmentName:string;
-
+  TabDescription:string;
+  TabSalary:string;
   ngOnInit(): void {
-    this.DepartmentId=this.dep.DepartmentId;
-    this.DepartmentName=this.dep.DepartmentName;
+    this.DepartmentId=this.dep.TabDescription;
+    this.DepartmentName=this.dep.TabSalary;
   }
 
   addDepartment(){
-    var val = {DepartmentId:this.DepartmentId,
-                DepartmentName:this.DepartmentName};
-    this.service.addDepartment(val).subscribe(res=>{
+    var val = {Descripcion:this.TabDescription,
+                SalarioQuincenal:this.TabSalary};
+    this.service.postTabulador(val).subscribe(res=>{
       alert(res.toString());
     });
   }
